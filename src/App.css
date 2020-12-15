@@ -23,16 +23,24 @@
 .cources,
 .timetable {
   display: flex;
-  height: 90vh;
+  height: 80vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
 }
-
+.progressbar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.progress {
+  width: 80%;
+}
 .footer {
   background: #343a40;
   margin-top: 20px;
-  height: 50px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;

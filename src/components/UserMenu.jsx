@@ -9,9 +9,7 @@ import{Dropdown, DropdownItem,DropdownToggle, DropdownMenu} from 'reactstrap';
 function UserMenu(){
     const [sidebar, setSidebar] = useState(false);
 
-    const showSidebar = () =>{
-        setSidebar(!sidebar);
-    }
+    const showSidebar = () => setSidebar(!sidebar);
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const toggle = () => setDropdownOpen(!dropdownOpen);
