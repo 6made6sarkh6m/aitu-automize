@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/aitu-automize/static/css/main.9068d7e1.chunk.css",
+    "main.css": "/aitu-automize/static/css/main.7a1f1930.chunk.css",
     "main.js": "/aitu-automize/static/js/main.a1e6d29c.chunk.js",
     "main.js.map": "/aitu-automize/static/js/main.a1e6d29c.chunk.js.map",
     "runtime-main.js": "/aitu-automize/static/js/runtime-main.95239801.js",
@@ -12,14 +12,14 @@
     "static/js/3.5c58bf01.chunk.js.map": "/aitu-automize/static/js/3.5c58bf01.chunk.js.map",
     "index.html": "/aitu-automize/index.html",
     "static/css/2.43b2b750.chunk.css.map": "/aitu-automize/static/css/2.43b2b750.chunk.css.map",
-    "static/css/main.9068d7e1.chunk.css.map": "/aitu-automize/static/css/main.9068d7e1.chunk.css.map",
+    "static/css/main.7a1f1930.chunk.css.map": "/aitu-automize/static/css/main.7a1f1930.chunk.css.map",
     "static/js/2.8417283d.chunk.js.LICENSE.txt": "/aitu-automize/static/js/2.8417283d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.95239801.js",
     "static/css/2.43b2b750.chunk.css",
     "static/js/2.8417283d.chunk.js",
-    "static/css/main.9068d7e1.chunk.css",
+    "static/css/main.7a1f1930.chunk.css",
     "static/js/main.a1e6d29c.chunk.js"
   ]
 }
