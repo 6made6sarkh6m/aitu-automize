@@ -1,0 +1,93 @@
+.home {
+  display: flex;
+  height: 80vh;
+  width: 100%;
+  flex-direction: column;
+}
+
+.profile_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 30vh;
+  background: #eef3f7;
+  width: 80%;
+  margin: 30px auto;
+  border-radius: 13px;
+}
+.course_info {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.prof_rep {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+.prof_rep .image {
+  background: lightblue;
+  height: 300px;
+  width: 300px;
+  shape-outside: circle();
+  clip-path: circle();
+}
+
+.edu_prog {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart_wrapper {
+  background: #eef3f7;
+  margin: auto;
+  height: 50vh;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.barchart {
+  width: 30%;
+  height: 90%;
+}
+.dough {
+  width: 50%;
+  height: 90%;
+}
+.progressbar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress {
+  width: 80%;
+}
+.assignment_container {
+  width: 80%;
+  margin: 30px auto;
+  background: #eef3f7;
+  border-radius: 10px;
+}
+.footer {
+  background: #343a40;
+  margin-top: 20px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-text {
+  color: #ffff;
+  font-size: 1rem;
+}

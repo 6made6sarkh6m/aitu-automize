@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-* {
+html,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
+  height: 100%;
 }
 .login-form {
   height: 100vh;
@@ -19,7 +21,7 @@
   flex-direction: column;
   min-height: 100%;
 }
-.home,
+
 .cources,
 .timetable {
   display: flex;
@@ -27,25 +29,4 @@
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-}
-.progressbar-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.progress {
-  width: 80%;
-}
-.footer {
-  background: #343a40;
-  margin-top: 20px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.footer-text {
-  color: #ffff;
-  font-size: 1rem;
 }
