@@ -1,35 +1,31 @@
 import './App.css';
-import {useState} from 'react';
-import {Switch, Route, useHistory} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, useLocation} from 'react-router-dom';
 import LoginPage from './components/LoginPage';
 import UserPage from './components/UserPage';
+import useToken from './helpers/useToken';
 function App() {
-  let history = useHistory();
-  const [userData, setUserData] = useState({
-    email: "",
-    password: ""
-  });
-
-
-   const userType = (e)=>{
-    const {id, value} = e.target;
-    setUserData(userData=>{
-      return{
-        ...userData, [id]: value
-      }
-    });
-  }
-
-    function submitForm(e){
-        e.preventDefault();
-        history.push('/home');
-    }
+  let query = new URLSearchParams(useLocation().search);
+  const {token, setToken} = useToken();
+  const codeMS = query.get("code");
   return(
-    <Switch>
-      <Route exact path='/' render={()=><LoginPage userType={userType} submitForm={submitForm}></LoginPage>}>
-      </Route>
-      <Route path='/home' render={()=><UserPage userData={userData}></UserPage>}></Route>
+    <>
+    <Router>
+      <LoginPage setToken={setToken} codeMS={codeMS}></LoginPage>
+      <Switch>
+        
+        {
+          // token || codeMS?
+          //   <Route path = '/' render={()=><UserPage codeMS={codeMS} ></UserPage>}/>
+          //   : 
+          //   <Route exact path='/' render={()=><LoginPage setToken={setToken} codeMS={codeMS}></LoginPage>}/>
+          
+
+          
+        }
       </Switch>
+    </Router>
+    
+    </>
   )
 }
 

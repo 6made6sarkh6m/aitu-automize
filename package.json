@@ -5,6 +5,7 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.4.0",
+    "availity-reactstrap-validation": "^2.7.0",
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "chart.js": "^2.9.4",
@@ -19,7 +20,6 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

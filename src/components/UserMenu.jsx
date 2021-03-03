@@ -7,6 +7,12 @@ import './css/UserMenu.css';
 import {IconContext} from 'react-icons';
 import{Dropdown, DropdownItem,DropdownToggle, DropdownMenu} from 'reactstrap';
 function UserMenu(){
+
+    const logout =(event)=>{
+        event.preventDefault();
+        localStorage.removeItem('token');
+        window.location.reload();
+    }
     const [sidebar, setSidebar] = useState(false);
 
     const showSidebar = () => setSidebar(!sidebar);
@@ -28,7 +34,7 @@ function UserMenu(){
             <DropdownItem header>Header</DropdownItem>
             <DropdownItem>Profile settings</DropdownItem>
             <DropdownItem divider />
-            <DropdownItem>Logout</DropdownItem>
+            <DropdownItem onClick={logout}>Logout</DropdownItem>
           </DropdownMenu>
         </Dropdown>
 

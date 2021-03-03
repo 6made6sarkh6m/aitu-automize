@@ -1,0 +1,23 @@
+.courseHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.courseItems {
+  width: 100vh;
+  column-count: 3;
+  margin: 10vh auto;
+  display: flex;
+  justify-content: space-between;
+}
+.courseContainer {
+  border: 0.5px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 30vh;
+}
+
+.courseInfo {
+  display: flex;
+  flex-direction: row;
+}

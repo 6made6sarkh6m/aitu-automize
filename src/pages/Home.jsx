@@ -4,7 +4,6 @@ import DoughnutChart from '../components/Charts/DoughnutChart';
 import ProgressBar from '../components/ProgressBar';
 import AssignmentList from '../components/AssignmentList';
 import '../components/css/Home.css';
-import axios from 'axios';
 function Home({student}){
     
     const [assignments, setAssignments] = useState({
@@ -12,17 +11,17 @@ function Home({student}){
     });
 
     useEffect(()=>{
-        axios.get('https://10.1.11.30:8020/savesnapshotservice/snapshot/announcing?id=1').then(res=>{
-    let results = res.data;    
-    setAssignments(assignments=>{
-        return{...assignments, assign:results}
+//         axios.get('https://10.1.11.30:8020/savesnapshotservice/snapshot/announcing?id=1').then(res=>{
+//     let results = res.data;    
+//     setAssignments(assignments=>{
+//         return{...assignments, assign:results}
 
-    }
-    )
-    console.log(results);
+//     }
+//     )
+//     console.log(results);
 
-}).catch(err=>{console.log(err)});
-    },[])
+// }).catch(err=>{console.log(err)});
+ },[])
     
     
     return(
@@ -35,7 +34,7 @@ function Home({student}){
                 <div className="prof_rep">
                     <h1>{student.firstname_en} {student.lastname_en}</h1>
                     <div className='image'>
-                        <img src={`data:image/jpeg; base64, ${student.photo}`}></img>
+                        <img src={`data:image/jpeg; base64, ${student.photo}` } alt=''></img>
                     </div>
                 </div>
                 <div className="edu_prog">
