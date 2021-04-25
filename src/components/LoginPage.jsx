@@ -1,53 +1,73 @@
 import React,{useState} from 'react';
-import {Button, FormGroup, Label, NavLink} from 'reactstrap';
+import {Button, FormGroup, Label, NavLink, Spinner} from 'reactstrap';
 import {AvField, AvForm} from 'availity-reactstrap-validation';
 import Proptypes from 'prop-types';
+//import axios from 'axios';
+import {useLocation} from 'react-router-dom';
+// import axios from 'axios';
 
-async function loginUser(credentials){
-  return fetch('http://10.1.10.151:7771/authenticate',{
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(credentials)
-  })
-  .then(data=>data.json())
+
+function GetParam(){
+  return new URLSearchParams(useLocation().search);
 }
 
-
-function LoginPage({setToken, codeMS}){
+function LoginPage({setToken}){
+  let query = GetParam().get("code");
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
     const [isValid, setIsValid] = useState(true);
     
+    
+    //http://10.1.10.151:7771/authenticate
+    // https://tomcat.astanait.edu.kz:8020/mark
+    async function loginUser(credentials){
+      return fetch('https://tomcat.astanait.edu.kz:8020/mark',{
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(credentials)
+      })
+      .then(data=>data.json());//then(res=>console.log(res));//.then(res=>setToken({res}.token));
+    }
+    
+    
+   if(query!=null){
+      
+     const msalToken =  loginUser({code: query});
+      msalToken.then(res=>setToken(res));
+      return(
+      <div className='loader' style={{width:100+'%',height:100+'vh',display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <Spinner style={{width:150+'px', height:150+'px' }} type='grow' color='dark'></Spinner>
+        </div>)
+  
+      
+      
+   }
 
     const handleSubmit = async e => {
         e.preventDefault();
-        const token = await loginUser({
-            username, password, codeMS
-        });
-        setToken(token.token);
-        console.log(token.token);
-        if(!token.ok){
+         const token = await loginUser({
+            username, password
+        })
+        if(token.error){
           setIsValid(false);
+        }else{
+          setToken(token);
         }
+        
+        
     }
+   
     
-    const msalSubmit = async e =>{
-      
-      const token = await loginUser({
-        codeMS
-      });
-      setToken(token.token);
-      if(!token.ok){
-        setIsValid(false);
-      }
-    }
   
     return(
       <>
+      
       <div className='login-form'>
+        
         <AvForm>
+        
             <h1 className='text-center'>
         <span className='text-weight-bold'>AITU Digital portal</span>
         </h1>
@@ -64,16 +84,14 @@ function LoginPage({setToken, codeMS}){
             required: {value: true, errorMessage: 'This field is requiered'},
           }} onChange={e=>setPassword(e.target.value)}/>
         </FormGroup>
-        {
-          isValid ?
-          <p>Entering</p>
-          :
-          <p>Invalid username or password</p>
-        }
+        
         
         <Button className='btn-lg btn-dark btn-block' onClick={handleSubmit}> Sign in</Button>
+          {
+            isValid?<p>Signing in</p>:<p>Invalid username or password</p>
+          }
         
-        
+        {/* <NavLink className='text-center pt-3'  href="https://login.microsoftonline.com/158f15f3-83e0-4906-824c-69bdc50d9d61/oauth2/v2.0/authorize?client_id=9f15860b-4243-4610-845e-428dc4ae43a8&response_type=code&redirect_uri=https%3A%2F%2Ftomcat.astanait.edu.kz:8020/portal&response_mode=query&scope=offline_access%20user.read%20mail.read&state=12345">Sign in with Microsoft</NavLink> */}
           <NavLink className='text-center pt-3'  href="https://login.microsoftonline.com/158f15f3-83e0-4906-824c-69bdc50d9d61/oauth2/v2.0/authorize?client_id=9f15860b-4243-4610-845e-428dc4ae43a8&response_type=code&redirect_uri=http%3A%2F%2Flocalhost:3000&response_mode=query&scope=offline_access%20user.read%20mail.read&state=12345">Sign in with Microsoft</NavLink>
         </AvForm>
         </div>
@@ -85,3 +103,5 @@ function LoginPage({setToken, codeMS}){
       setToken: Proptypes.func.isRequired
   };
 export default LoginPage;
+
+//https://tomcat.astanait.edu.kz:8020/portal

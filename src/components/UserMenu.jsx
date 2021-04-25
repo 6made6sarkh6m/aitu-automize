@@ -6,12 +6,14 @@ import {SideBarData} from './SideBarData';
 import './css/UserMenu.css';
 import {IconContext} from 'react-icons';
 import{Dropdown, DropdownItem,DropdownToggle, DropdownMenu} from 'reactstrap';
+
 function UserMenu(){
 
     const logout =(event)=>{
         event.preventDefault();
         localStorage.removeItem('token');
-        window.location.reload();
+        //  window.location.replace('https://tomcat.astanait.edu.kz:8020/portal'); 
+         window.location.replace('http://localhost:3000');      
     }
     const [sidebar, setSidebar] = useState(false);
 

@@ -4,41 +4,40 @@ import UserMenu from './UserMenu';
 import Home from '../pages/Home';
 import Cources from '../pages/Cources';
 import Timetable from '../pages/Timetable';
+import Questionnaire from '../pages/Questionnaire';
 import  API from '../API.json';
-import axios from 'axios';
 
-function UserPage({codeMS}){
+
+
+
+function UserPage({token}){
+    
     const [student, setStudent] = useState({
         firstname: "",
         lastname:"",
         course:"",
         photo:""
     });
-    // const [assignments, setAssignments] = useState({
-    //     assign :[]
-    // });
-
 
     const api = API;
     useEffect(()=>{
-         axios.post('http://10.1.10.151:7771/authenticate',{
-             code: codeMS}).then(res=>console.log(res.data.token)).catch(err=>{console.log(err)});
-         
         setStudent(student=>{
             return{...student, firstname:api.firstname_en, lastname:api.lastname_en, course: api.courseNumber, photo: api.photo}
         })
     },[]);
+
+    
     
     
     return(
         
         <div className='container-wrapper'>
-           
                 <UserMenu></UserMenu>
                     <Switch>
-                         <Route exact path='/'  render={()=><Home student = {api}></Home>}></Route>
-                         <Route exact path='/cources' component = {Cources}></Route>
+                         <Route exact path='/'  render={()=><Home student = {token.id}></Home>}></Route>
+                         <Route exact path='/cources' render={()=><Cources token = {token.id}></Cources>}></Route>
                          <Route exact path='/timetable' component = {Timetable}></Route>
+                         <Route exact path = '/questionnaire' component={Questionnaire}></Route>
                     </Switch>
            
            

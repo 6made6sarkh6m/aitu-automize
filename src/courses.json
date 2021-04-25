@@ -1,0 +1,32 @@
+[
+    {
+    "courseTitle": "Data Analysis",
+    "numberOfSeats": 100,
+    "tutor": "Tleuzhan Mukatayev",
+    "groupId": 2,
+    "description": "11111111111"
+
+    },
+    {
+        "courseTitle": "Machine Learning",
+        "numberOfSeats": 100,
+        "tutor": "Khaimuldin Askar",
+        "groupId": 2,
+        "description": "11111111111"
+    
+        },
+    {
+    "courseTitle": "iOS development",
+    "numberOfSeats": 180,
+    "tutor":"Alpamys Dosbol",
+    "groupId": 1,
+    "description":"222222222222"
+    },
+    {
+    "courseTitle":"Android development",
+    "numberOfSeats":180,
+    "tutor":"Olzhas Tulzhanov",
+    "groupId":1,
+    "description":"33333333333333"
+    }
+]

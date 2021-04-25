@@ -1,3 +1,6 @@
+.body {
+  z-index: -1;
+}
 .courseHeader {
   display: flex;
   justify-content: center;

@@ -18,9 +18,15 @@ export const SideBarData = [
         cName: 'nav-text'
     },
     {
-        title: 'cources',
+        title: 'courses',
         path:'/cources',
         icon: <FaIcons.FaBook/>,
+        cName: 'nav-text'
+    },
+    {
+        title: 'questionnaire',
+        path:'/questionnaire',
+        icon: <AiIcons.AiFillContainer/>,
         cName: 'nav-text'
     }
 ]
