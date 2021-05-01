@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react';
-import BarChart from '../components/Charts/BarChart';
-import DoughnutChart from '../components/Charts/DoughnutChart';
+// import BarChart from '../components/Charts/BarChart';
+// import DoughnutChart from '../components/Charts/DoughnutChart';
 import ProgressBar from '../components/ProgressBar';
 import '../components/css/Home.css';
 function Home({student}){

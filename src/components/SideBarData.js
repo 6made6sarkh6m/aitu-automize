@@ -11,22 +11,22 @@ export const SideBarData = [
         icon: <AiIcons.AiFillHome/>,
         cName: 'nav-text'
     },
-    {
-        title: 'timetable',
-        path:'/timetable',
-        icon: <IoIcons.IoCalendarSharp/>,
-        cName: 'nav-text'
-    },
+    // {
+    //     title: 'timetable',
+    //     path:'/timetable',
+    //     icon: <IoIcons.IoCalendarSharp/>,
+    //     cName: 'nav-text'
+    // },
     {
         title: 'courses',
         path:'/cources',
         icon: <FaIcons.FaBook/>,
         cName: 'nav-text'
-    },
-    {
-        title: 'questionnaire',
-        path:'/questionnaire',
-        icon: <AiIcons.AiFillContainer/>,
-        cName: 'nav-text'
     }
+    // {
+    //     title: 'questionnaire',
+    //     path:'/questionnaire',
+    //     icon: <AiIcons.AiFillContainer/>,
+    //     cName: 'nav-text'
+    // }
 ]

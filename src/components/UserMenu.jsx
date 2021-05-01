@@ -12,8 +12,8 @@ function UserMenu(){
     const logout =(event)=>{
         event.preventDefault();
         localStorage.removeItem('token');
-        //  window.location.replace('https://tomcat.astanait.edu.kz:8020/portal'); 
-         window.location.replace('http://localhost:3000');      
+        window.location.replace('https://tomcat.astanait.edu.kz:8020/portal'); 
+        //  window.location.replace('http://localhost:3000');      
     }
     const [sidebar, setSidebar] = useState(false);
 
